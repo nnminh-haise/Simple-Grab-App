@@ -7,9 +7,10 @@
 
 Chương trình sẽ quản lí nhân viên với các thông tin như sau:
 
+- Mã nhân viên (*số nguyên duy nhất được tăng tự động*).
 - Họ và tên nhân viên (không quá $256$ kí tự).
 - Ngày, tháng, năm sinh (DD/MM/YYYY).
-- Số CCCD (có đúng $12$ chữ số và đóng vai trò là **mã nhân viên** xác định các nhân viên với nhau).
+- Số CCCD (có đúng $12$ chữ số).
 - Bằng lái xe ($12$ chữ số).
 - Địa chỉ thường trú (không quá $256$ kí tự).
 - Địa chỉ mail (không quá $256$ kí tự).
@@ -20,31 +21,21 @@ Chương trình sẽ quản lí nhân viên với các thông tin như sau:
 
 Chương trình sẽ quản lí khách hàng với các thông tin sau:
 
+- Mã khách hàng (*số nguyên duy nhất được tăng tự động*).
 - Họ và tên khách hàng (không quá $256$ kí tự).
 - Ngày, tháng, năm sinh (định dạng DD/MM/YYYY).
-- Số CCCD (có đúng $12$ chữ số và đóng vai trò là **mã khách hàng** xác định các khách hàng với nhau).
+- Số CCCD (có đúng $12$ chữ số).
 - Địa chỉ mail (không quá $256$ kí tự).
 - Số điện thoại liên lạc ($10$ chữ số).
 
 Với mỗi yêu cầu đặt xe, chương trình sẽ quản lí các thông tin gồm:
 
-- Mã yêu cầu (mỗi yêu cầu sẽ có một mã yêu cầu duy nhất).
+- Mã yêu cầu (*số nguyên duy nhất được tăng tự động*).
 - Thông tin khách hàng (mã khách hàng).
 - Thông tin tài xế (mã nhân viên).
 - Thời gian yêu cầu (gồm ngày theo định dạng DD/MM/YYYY và thời gian theo định dạng giờ/phút/giây).
 - Vị trí yêu cầu và vị trí đích đến (tọa độ `(x, y)` bắt đầu và `(u, v)` đích đến).
 - Số tiền thanh toán (không quá $10^9$ VND).
-
-Mã yêu cầu sẽ có cấu trúc như sau:
-
-$$DD + MM + YYYY + XXXXXXXXXXXX$$
-
-Trong đó:
-
-- $DD$: ngày thực hiện yêu cầu.
-- $MM$: tháng thực hiện yêu cầu.
-- $YYYY$: năm thực hiện yêu cầu.
-- $XXXXXXXXXXXX$: CCCD của khách hàng thực hiện yêu cầu.
 
 ### Các chức năng chính của dịch vụ
 

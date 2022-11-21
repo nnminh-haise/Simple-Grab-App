@@ -1,7 +1,9 @@
 
 # Ứng dụng dịch vụ Grab đơn giản
 
-Đây là một chương trình mô phỏng lại một số dịch vụ cơ bản của Grab. Để đơn giản hóa việc xác định tọa độ cho các đối tượng thì ở đây thống nhất sử dụng hệ tọa độ $Oxy$ với $|x|, |y| \le 10^6$ và các tọa độ phải là các số nguyên.
+Đây là một chương trình mô phỏng lại một số dịch vụ cơ bản của Grab. Để đơn giản hóa việc xác định tọa độ cho các đối tượng thì ở đây thống nhất sử dụng hệ tọa độ $Oxy$ với $|x|, |y| \le 10^6$ và các tọa độ phải là các số nguyên. Để đơn giản việc tìm đường đi thì sẽ luôn tồn tại một đường thẳng đi qua hai tọa độ của khách hàng và tài xế. Nghĩa là việc tìm tài xế cho khách hàng chỉ là tìm tài xế có khoảng cách ngắn nhất so với tọa độ hiện tại của khách hàng. Khoảng cách được tính bằng công thức:
+
+$$s = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$$
 
 ### Nhân viên
 
@@ -16,6 +18,7 @@ Chương trình sẽ quản lí nhân viên với các thông tin như sau:
 - Địa chỉ mail (không quá $256$ kí tự).
 - Số điện thoại liên lạc ($10$ chữ số).
 - Thời gian bắt đầu chạy Grab (định dạng ngày/tháng/năm: DD/MM/YYYY).
+- Tọa độ ban đầu (có dạng `(x, y)` và luôn luôn cố định).
 
 ### Khách hàng
 
@@ -57,8 +60,9 @@ Với mỗi yêu cầu đặt xe, chương trình sẽ quản lí các thông ti
     - Địa chỉ mail (không quá $256$ kí tự).
     - Số điện thoại liên lạc ($10$ chữ số).
     - Thời gian bắt đầu chạy Grab (định dạng ngày/tháng/năm: DD/MM/YYYY).
+    - Tọa độ ban đầu (có dạng `(x, y)` và luôn luôn cố định).
 
-- Chức năng **Đặt xe**: Người dùng (*khách hàng*) sẽ thực hiện yêu cầu đặt xe đến chương trình. Khách hàng sẽ gửi các thông tin dưới đây đến chương trình, sau đó chương trình sẽ thực hiện tìm kiếm tài xế (*nhân viên*) gần nhất với khách hàng đưa thông tin cho khách. Nếu có nhiều tài xế có cùng khoảng cách gần giống nhau sẽ được sắp xếp theo tên và họ.
+- Chức năng **Đặt xe**: Người dùng (*khách hàng*) sẽ thực hiện yêu cầu đặt xe đến chương trình. Khách hàng sẽ gửi các thông tin dưới đây đến chương trình, sau đó chương trình sẽ thực hiện tìm kiếm tài xế (*nhân viên*) gần nhất với khách hàng đưa thông tin cho khách. Nếu có nhiều tài xế có cùng khoảng cách gần giống nhau sẽ được sắp xếp theo tên và họ. Sau khi tài xế đi đón khách sẽ quay lại vị trí ban đầu quy định sẵn.
 
     - Địa chỉ (tọa độ hiện tại của khách hàng).
     - Đích đến (tọa độ đích đến mong muốn của khách hàng).
